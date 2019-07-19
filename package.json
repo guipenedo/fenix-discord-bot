@@ -1,0 +1,31 @@
+{
+  "name": "fenix-discord-bot",
+  "version": "1.0.0",
+  "description": "Um bot de discord para obter automaticamente informação da plataforma FénixEdu e exibi-la num servidor de discord.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guipenedo/fenix-discord-bot.git"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "rss",
+    "fenix",
+    "ist",
+    "tecnico"
+  ],
+  "author": "guipenedo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/guipenedo/fenix-discord-bot/issues"
+  },
+  "homepage": "https://github.com/guipenedo/fenix-discord-bot#readme",
+  "dependencies": {
+    "discord.js": "^11.5.1",
+    "feedtracker": "^1.0.0"
+  }
+}
