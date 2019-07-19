@@ -27,5 +27,8 @@
   "dependencies": {
     "discord.js": "^11.5.1",
     "feedtracker": "^1.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.0.1"
   }
 }
