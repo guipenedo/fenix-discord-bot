@@ -25,8 +25,12 @@
   },
   "homepage": "https://github.com/guipenedo/fenix-discord-bot#readme",
   "dependencies": {
+    "axios": "^0.19.0",
     "discord.js": "^11.5.1",
-    "feedtracker": "^1.0.0"
+    "dotenv": "^8.0.0",
+    "feedtracker": "^1.0.0",
+    "moment": "^2.24.0",
+    "mongoose": "^5.6.5"
   },
   "devDependencies": {
     "eslint": "^6.0.1"
