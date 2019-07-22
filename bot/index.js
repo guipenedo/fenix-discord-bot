@@ -14,7 +14,7 @@ const commands = require('../commands');
 client.on('message', message => {
 	if(message.author.bot || !message.content.startsWith(config.BOT_PREFIX))
 		return;
-	let command = message.content.slice(config.BOT_PREFIX.length);
+	let command = message.content.slice(config.BOT_PREFIX.length).split(' ')[0];
 	if(commands.has(command))
 		commands.get(command).handle(message);
 	else

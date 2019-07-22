@@ -16,7 +16,7 @@ function walk(dir, prefix){
 				module.exports.set(alias, command);
 			});
 			command.helpString = `${config.BOT_PREFIX}${command.name} ${command.usage} - ${command.description}`;
-			command.showHelp = message => message.channel.send(command.helpString);
+			command.showHelp = message => message.channel.send(`\`\`\`${command.helpString}\`\`\``);
 			helpList += `${command.helpString}\n`;
 		}
 	});
