@@ -51,7 +51,7 @@
 		}
 	},
 	"formation": {
-		"bot": {
+		"worker": {
 			"quantity": 1,
 			"size": "free"
 		}
