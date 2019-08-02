@@ -3,18 +3,18 @@ var Schema = mongoose.Schema;
 
 module.exports = new Schema({
 	acronym:  String,
-	credits: Number,
+	credits: {
+		type: Number, 
+		set: v => parseFloat(v, 10)
+	},
 	name:   String,
 	id:   {
 		type: Number, 
 		set: v => parseInt(v, 10),
 		unique: true
 	},
-	academicTerm:   String,
-	last_updated: { 
-		type: Date, 
-		default: Date.now 
-	},
+	academicTerm: String,
+	lastUpdated: Date,
 	active: {
 		type: Boolean, 
 		default: false

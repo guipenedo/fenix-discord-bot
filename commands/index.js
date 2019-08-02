@@ -17,7 +17,8 @@ function walk(dir, prefix){
 			});
 			command.helpString = `${config.BOT_PREFIX}${command.name} ${command.usage} - ${command.description}`;
 			command.showHelp = message => message.channel.send(`\`\`\`${command.helpString}\`\`\``);
-			helpList += `${command.helpString}\n`;
+			if(!command.admin)
+				helpList += `${command.helpString}\n`;
 		}
 	});
 }
@@ -25,6 +26,6 @@ function walk(dir, prefix){
 walk(__dirname, '');
 module.exports.set('help', {
 	handle(msg){
-		msg.channel.send(`\`\`\`Command list:\n${helpList}\`\`\``);
+		msg.channel.send(`\`\`\`Command list:\n${helpList}\n[] - opcional <> - obrigatório\`\`\``);
 	}
 });

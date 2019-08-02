@@ -1,4 +1,5 @@
 const moment = require('moment');
+const config = require('../config');
 
 var self = module.exports = {
 	parseDate(input){
@@ -9,6 +10,10 @@ var self = module.exports = {
 	},
 	stringify(date, time){
 		return self.getMomentFromInput(date).format('DD/MM/YYYY') + ' ' + self.parseTime(time).format('HH:mm');
+	},
+	prettyString(date){
+		moment.locale(config.LOCALE || 'pt');
+		return moment(date).format('LLLL');
 	},
 	getMomentFromInput(input){
 		let day = moment();
@@ -28,7 +33,7 @@ var self = module.exports = {
 	getDayFromInput(input, days){
 		let day = self.getMomentFromInput(input);
 		if(day == null) return null;
-		return days.find(d => day.isSame(self.parseDate(d.date), 'day'));
+		return days.find(d => day.isSame(self.parseDate(d.day), 'day'));
 	},
 	removeBefore(input, objs){
 		let time = self.parseTime(input);
