@@ -1,0 +1,60 @@
+{
+	"name": "fenix-discord-bot",
+	"description": "Um bot de discord para obter automaticamente informação da plataforma FénixEdu e exibi-la num servidor de discord.",
+	"repository": "https://github.com/guipenedo/fenix-discord-bot.git",
+	"keywords": [
+		"discord",
+		"bot",
+		"rss",
+		"fenix",
+		"ist",
+		"tecnico"
+	],
+	"addons": [{
+			"plan": "mongolab:sandbox"
+		}
+	],
+	"env": {
+		"BOT_TOKEN": {
+			"description": "Token do bot de discord. Obter aqui: https://discordapp.com/developers/applications/."
+		},
+		"BOT_CHANNEL": {
+			"description": "Channel para o bot postar os anúncios do Fénix. O ID pode ser obtido em developer mode (https://discordia.me/developer-mode) carregando com o botão do lado direito no channel -> copy id."
+		},
+		"BOT_PREFIX": {
+			"description": "O prefixo para os comandos do bot. Por exemplo, lista de comando com !help",
+			"value": "!"
+		},
+		"BOT_ANNOUNCEMENT": {
+			"description": "Formato para as mensagens com anúncios do Fénix. Ver documentação para uma lista de tags disponíveis.",
+			"value": "**[{course_acronym}] {course_name}**\n__{title}__\n\n{description}\n\n{date} - *{author}*\n\n<{link}>"
+		},
+		"FENIX_URL": {
+			"description": "URL para a API do Fénix (o default está para a API do técnico).",
+			"value": "https://fenix.tecnico.ulisboa.pt/api/fenix/v1/"
+		},
+		"FENIX_DEGREE": {
+			"description": "ID do curso/degree. Pode ser obtido em FENIX_URL/degrees. (Default: MEAer)",
+			"value": "2761663971480"
+		},
+		"FEED_UPDATE_INTERVAL": {
+			"description": "Intervalo de tempo em segundos entre pedidos para procurar novos anúncios do Fénix.",
+			"value": "30"
+		},
+		"FEED_SEND_FIRST": {
+			"description": "Se quando o feed é adicionado pela primeira vez os anúncios anteriores devem ser enviados.",
+			"value": "false"
+		},
+		"LOCALE": {
+			"description": "Locale para mostrar as strings de tempo. Default: pt",
+			"value": "pt"
+		}
+	},
+	"formation": {
+		"bot": {
+			"quantity": 1,
+			"size": "free"
+		}
+	}
+}
+  
