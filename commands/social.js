@@ -10,7 +10,7 @@ module.exports = {
 		let args = message.content.split(' ').slice(1);
 		if(args.length > 1)
 			return module.exports.showHelp(message);
-		social(args.length == 1 ? args[0] : null, data => {
+		social(args.length == 1 ? args[0] : 'hoje', data => {
 			if(!data){
 				message.channel.send('Não foram encontrados dados para o dia indicado.');
 				return;
