@@ -1,4 +1,4 @@
-const moment = require('moment');
+const moment = require('moment-timezone');
 const config = require('../config');
 
 var self = module.exports = {
@@ -13,10 +13,10 @@ var self = module.exports = {
 	},
 	prettyString(date){
 		moment.locale(config.LOCALE || 'pt');
-		return moment(date).format('LLLL');
+		return moment(date).tz(config.TIMEZONE || 'Europe/Lisbon').format('LLLL');
 	},
 	getMomentFromInput(input){
-		let day = moment();
+		let day = moment().tz(config.TIMEZONE || 'Europe/Lisbon');
 		if(input == 'amanha')
 			day = day.add(1, 'd');
 		else if(input && input != 'hoje')
